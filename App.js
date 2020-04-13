@@ -1,19 +1,33 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from "react";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+import { Icon } from "react-native";
+import Home from "./Components/Home";
+import ProductList from "./Components/ProductList";
+import ProductDetail from "./Components/ProductDetail";
+import { Provider } from "react-redux";
+import { NavigationContainer } from "@react-navigation/native";
+
+import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import store from "./Redux";
+
+const { Navigator, Screen } = createStackNavigator();
+// const { Navigator, Screen } = createBottomTabNavigator();
+
+class App extends Component {
+  render() {
+    return (
+      <NavigationContainer>
+        <Provider store={store}>
+          <Navigator initialRouteName="Home">
+            <Screen name="Home" component={Home} />
+            <Screen name="ProductList" component={ProductList} />
+            <Screen name="ProductDetail" component={ProductDetail} />
+          </Navigator>
+        </Provider>
+      </NavigationContainer>
+    );
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
