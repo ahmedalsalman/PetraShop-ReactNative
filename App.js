@@ -19,6 +19,7 @@ class App extends Component {
     return (
       <NavigationContainer>
         <Provider store={store}>
+          {/* Your navigator should eventually move to its own file */}
           <Navigator initialRouteName="Home">
             <Screen name="Home" component={Home} />
             <Screen name="ProductList" component={ProductList} />
