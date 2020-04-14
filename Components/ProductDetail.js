@@ -7,7 +7,7 @@ import {
   Content,
   Container,
   Item,
-  Right,
+  Right
 } from "native-base";
 
 // Styles
@@ -33,7 +33,8 @@ const ProducDetail = ({ route }) => {
             </CardItem>
           </Card>
 
-          {/* <Button
+          {/* DED
+            <Button
             title="BACK"
             color="#6C788E"
             onPress={() => alert("Come Baaack!")}

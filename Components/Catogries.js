@@ -1,3 +1,7 @@
+/**
+ * Don't commit dead code
+ */
+
 // import React from "react";
 // import { Container, Content, List, View, Text, ListItem } from "native-base";
 // import { connect } from "react-redux";

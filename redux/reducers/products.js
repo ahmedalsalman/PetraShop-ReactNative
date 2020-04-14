@@ -1,7 +1,14 @@
 import { SET_PRODUCTS } from "../actions/actionTypes";
 
+/**
+ * If you're not adding any more keys to this state,
+ * you can simplify it to just be the array:
+ *
+ * const initialState = [];
+ *
+ */
 const initialState = {
-  products: [],
+  products: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -9,7 +16,7 @@ const reducer = (state = initialState, action) => {
     case SET_PRODUCTS:
       return {
         ...state,
-        products: action.payload,
+        products: action.payload
       };
 
     default:

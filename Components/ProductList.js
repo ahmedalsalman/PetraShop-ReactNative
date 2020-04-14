@@ -2,12 +2,12 @@ import React from "react";
 import { Container, Content, List, View, Text, ListItem } from "native-base";
 import { Image } from "react-native";
 import { connect } from "react-redux";
-import { exp } from "react-native-reanimated";
+import { exp } from "react-native-reanimated"; // <-- ded
 
-const ProductList = (props) => {
+const ProductList = props => {
   const products = props.products;
-  console.log(products);
-  const productsList = products.map((item) => (
+  console.log(products); // <-- :/
+  const productsList = products.map(item => (
     <ListItem
       key={item.id}
       onPress={() => props.navigation.navigate("ProductDetail", { item: item })}
@@ -27,10 +27,10 @@ const ProductList = (props) => {
     </Container>
   );
 };
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    products: state.productsState.products,
+    products: state.productsState.products
   };
 };
 export default connect(mapStateToProps)(ProductList);
-// export default ProductList;
+// export default ProductList; <-- ded
