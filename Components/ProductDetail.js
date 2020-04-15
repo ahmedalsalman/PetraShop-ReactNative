@@ -1,14 +1,6 @@
 import React from "react";
-import { Button, Image, View, Text } from "react-native";
-import {
-  Body,
-  Card,
-  CardItem,
-  Content,
-  Container,
-  Item,
-  Right,
-} from "native-base";
+import { Image, View, Text } from "react-native";
+import { Body, Card, CardItem, Content, Container } from "native-base";
 
 // Styles
 import styles from "./styles";
@@ -32,17 +24,6 @@ const ProducDetail = ({ route }) => {
               </Body>
             </CardItem>
           </Card>
-
-          {/* <Button
-            title="BACK"
-            color="#6C788E"
-            onPress={() => alert("Come Baaack!")}
-          />
-          <Button
-            title="TAKE ME HOME"
-            color="#6C788E"
-            onPress={() => alert("Take me home!")}
-          /> */}
         </View>
       </Content>
     </Container>

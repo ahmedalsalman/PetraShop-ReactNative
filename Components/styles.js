@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
   overlayContainer: {
     flex: 1,
     backgroundColor: "rgba(218,245,255, .4)",
-    // backgroundColor: "rgb(155,215,241, .4);",
   },
   topStyling: {
     height: "40%",

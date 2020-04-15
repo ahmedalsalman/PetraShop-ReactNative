@@ -2,7 +2,7 @@ import { createStore, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 // Data actions
-import { fetchProducts } from "./actions";
+import { fetchProducts, checkForToken } from "./actions";
 
 import rootReducer from "./reducers";
 
@@ -14,5 +14,6 @@ const store = createStore(
 );
 
 store.dispatch(fetchProducts());
+store.dispatch(checkForToken());
 
 export default store;

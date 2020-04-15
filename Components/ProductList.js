@@ -2,11 +2,9 @@ import React from "react";
 import { Container, Content, List, View, Text, ListItem } from "native-base";
 import { Image } from "react-native";
 import { connect } from "react-redux";
-import { exp } from "react-native-reanimated";
 
 const ProductList = (props) => {
   const products = props.products;
-  console.log(products);
   const productsList = products.map((item) => (
     <ListItem
       key={item.id}
@@ -33,4 +31,3 @@ const mapStateToProps = (state) => {
   };
 };
 export default connect(mapStateToProps)(ProductList);
-// export default ProductList;

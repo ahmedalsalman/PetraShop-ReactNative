@@ -1,8 +1,6 @@
 import { SET_PRODUCTS } from "../actions/actionTypes";
 
-const initialState = {
-  products: [],
-};
+const initialState = { products: [] };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
