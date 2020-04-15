@@ -6,6 +6,7 @@ import { Button } from "native-base";
 import styles from "./styles";
 
 const Home = ({ navigation }) => {
+  // The image below should be downloaded and saved in the assets folder above and served as a static file.
   return (
     <ImageBackground
       source={{

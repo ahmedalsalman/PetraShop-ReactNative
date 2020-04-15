@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 
 const ProductList = (props) => {
   const products = props.products;
+  // maybe this list item should be its own component
   const productsList = products.map((item) => (
     <ListItem
       key={item.id}

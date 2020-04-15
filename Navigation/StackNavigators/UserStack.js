@@ -17,7 +17,7 @@ const UserStack = ({ user }) => {
   return (
     <Navigator initialRouteName={LOGIN} screenOptions={screenOptions}>
       {user ? (
-        <Screen name="Home" component={Home} />
+        <Screen name="Home" component={Home} /> {/* HOME should be a screenName exported from screenNames.js */}
       ) : (
         <>
           <Screen
