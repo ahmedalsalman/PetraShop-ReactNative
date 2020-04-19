@@ -4,6 +4,8 @@ import instance from "./instance";
 
 import { SET_CURRENT_USER } from "./actionTypes";
 import { AsyncStorage } from "react-native";
+import { fetchCart } from "./cart";
+import { acc } from "react-native-reanimated";
 
 const setCurrentUser = (token) => {
   setAuthToken(token);
@@ -15,6 +17,7 @@ const setCurrentUser = (token) => {
 export const checkForToken = () => async (dispatch) => {
   const currentTimeInSeconds = Date.now() / 1000;
   const token = await AsyncStorage.getItem("token");
+  dispatch(fetchCart(decode(token).user_id));
 
   if (token && decode(token).exp >= currentTimeInSeconds)
     dispatch(setCurrentUser(token));
@@ -24,7 +27,7 @@ export const checkForToken = () => async (dispatch) => {
 const setAuthToken = (token) => {
   if (token) {
     AsyncStorage.setItem("token", token);
-    instance.defaults.headers.Authorization = `jwt ${token}`;
+    instance.defaults.headers.Authorization = `Bearer ${token}`;
   } else {
     AsyncStorage.removeItem("token");
     delete instance.defaults.headers.Authorization;
@@ -34,9 +37,13 @@ const setAuthToken = (token) => {
 export const login = (userData, redirect) => async (dispatch) => {
   try {
     const response = await instance.post("login/", userData);
-    const { token } = response.data;
+    const { access } = response.data;
+    // const { user_id } = response.data;
+    // console.log("ssss  " + response.data.id);
+    console.log(decode(access).user_id);
+    dispatch(setCurrentUser(access));
+    dispatch(fetchCart(decode(access).user_id));
 
-    dispatch(setCurrentUser(token));
     redirect();
   } catch (error) {
     console.error("Error while logging in!", error);
@@ -45,7 +52,8 @@ export const login = (userData, redirect) => async (dispatch) => {
 
 export const signup = (userData, redirect) => async (dispatch) => {
   try {
-    await instance.post("signup/", userData);
+    const res = await instance.post("signup/", userData);
+    console.log(res.data);
     dispatch(login(userData, redirect));
   } catch (error) {
     console.error("Error while signing up!", error);

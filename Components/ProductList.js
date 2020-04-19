@@ -10,7 +10,11 @@ const ProductList = (props) => {
       key={item.id}
       onPress={() => props.navigation.navigate("ProductDetail", { item: item })}
     >
-      <Image source={{ uri: item.image1 }} style={{ width: 50, height: 50 }} />
+      <Image
+        source={{ uri: item.image1 }}
+        style={{ width: 150, height: 100 }}
+      />
+
       <Text>{item.name}</Text>
     </ListItem>
   ));

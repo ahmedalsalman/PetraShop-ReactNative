@@ -36,6 +36,9 @@ function RootTabNavigator() {
             case SHOP:
               iconName = "grid";
               break;
+            case CART:
+              iconName = "cart";
+              break;
 
             default:
               return <CartIcon color={color} />;
@@ -52,7 +55,7 @@ function RootTabNavigator() {
     >
       <Screen name={USER} component={UserStack} />
       <Screen name={SHOP} component={ShopStack} />
-      {/* <Screen name={CART} component={CartStack} /> */}
+      <Screen name={CART} component={CartStack} />
     </Navigator>
   );
 }

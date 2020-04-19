@@ -18,8 +18,7 @@ class Login extends Component {
   render() {
     const { navigation, login } = this.props;
     const { username, password } = this.state;
-    const goToCoffeeList = () =>
-      navigation.navigate(SHOP, { screen: PRODUCTSHOPS });
+    const goToList = () => navigation.navigate(SHOP, { screen: PRODUCTSHOPS });
     return (
       <View style={styles.authContainer}>
         <Text style={styles.authTitle}>Login</Text>
@@ -40,7 +39,7 @@ class Login extends Component {
         />
         <TouchableOpacity
           style={styles.authButton}
-          onPress={() => login(this.state, goToCoffeeList)}
+          onPress={() => login(this.state, goToList)}
         >
           <Text style={styles.authButtonText}>Log in</Text>
         </TouchableOpacity>

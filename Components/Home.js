@@ -21,7 +21,7 @@ const Home = ({ navigation }) => {
             transparent
             light
             style={styles.buttonStyling}
-            onPress={() => navigation.navigate("ProductList")}
+            onPress={() => navigation.navigate("Catogries")}
           >
             <Text style={styles.buttonTextStyling}>Shop</Text>
           </Button>

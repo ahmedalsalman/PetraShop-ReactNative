@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add jwt-decode
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-card-list
 
 PATH: 
   C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Users\banan\AppData\Local\Microsoft\WindowsApps;C:\Users\banan\AppData\Roaming\npm;C:\Users\banan\AppData\Local\Yarn\bin
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\banan\Desktop\Multi_PlatForm_Project\RN_petra\petrashop\node_modules\@babel\compat-data\node_modules\.bin'
+  Error: EPERM: operation not permitted, unlink 'C:\Users\banan\Desktop\Multi_PlatForm_Project\RN_petra\petrashop\node_modules\@babel\preset-env\node_modules\.bin'
 
 npm manifest: 
   {
@@ -33,11 +33,13 @@ npm manifest:
       "@react-navigation/stack": "^5.2.10",
       "axios": "^0.19.2",
       "expo": "~37.0.3",
+      "jwt-decode": "^2.2.0",
       "native-base": "2.13.8",
       "react": "~16.9.0",
       "react-dom": "~16.9.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
       "react-native-gesture-handler": "~1.6.0",
+      "react-native-input-spinner": "^1.2.10",
       "react-native-reanimated": "~1.7.0",
       "react-native-safe-area-context": "0.7.3",
       "react-native-screens": "~2.2.0",
@@ -3386,6 +3388,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
     integrity sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
   
+  jwt-decode@^2.2.0:
+    version "2.2.0"
+    resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-2.2.0.tgz#7d86bd56679f58ce6a84704a657dd392bba81a79"
+    integrity sha1-fYa9VmefWM5qhHBKZX3TkruoGnk=
+  
   kind-of@^1.1.0:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-1.1.0.tgz#140a3d2d41a36d2efcfa9377b62c24f8495a5c44"
@@ -4555,6 +4562,11 @@ Lockfile:
       hoist-non-react-statics "^2.3.1"
       invariant "^2.2.4"
       prop-types "^15.7.2"
+  
+  react-native-input-spinner@^1.2.10:
+    version "1.2.10"
+    resolved "https://registry.yarnpkg.com/react-native-input-spinner/-/react-native-input-spinner-1.2.10.tgz#6d822f1ac8e1b845c014c25e2993bec20c3f2ae7"
+    integrity sha512-dUxgvB+Yx0bYeW57YEriKXweX+pZh9ItU7xA6VfUhPdboEcgaMLME5vm1zOUeEnusZZcvVBDkYXiObKMaJVDzA==
   
   react-native-iphone-x-helper@^1.0.3, react-native-iphone-x-helper@^1.2.1:
     version "1.2.1"

@@ -12,12 +12,15 @@ import styles from "./styles";
 class Signup extends Component {
   state = {
     username: "",
+    first_name: "",
+    last_name: "",
+    email: "",
     password: "",
   };
 
   render() {
     const { navigation } = this.props;
-    const { username, password } = this.state;
+    const { username, password, first_name, last_name, email } = this.state;
     const goToCoffeeList = () =>
       navigation.navigate(SHOP, { screen: PRODUCTSHOPS });
     return (
@@ -29,6 +32,27 @@ class Signup extends Component {
           placeholderTextColor="#A6AEC1"
           value={username}
           onChangeText={(username) => this.setState({ username })}
+        />
+        <TextInput
+          style={styles.authTextInput}
+          placeholder="First Name"
+          placeholderTextColor="#A6AEC1"
+          value={first_name}
+          onChangeText={(first_name) => this.setState({ first_name })}
+        />
+        <TextInput
+          style={styles.authTextInput}
+          placeholder="Last Name"
+          placeholderTextColor="#A6AEC1"
+          value={last_name}
+          onChangeText={(last_name) => this.setState({ last_name })}
+        />
+        <TextInput
+          style={styles.authTextInput}
+          placeholder="Email"
+          placeholderTextColor="#A6AEC1"
+          value={email}
+          onChangeText={(email) => this.setState({ email })}
         />
         <TextInput
           style={styles.authTextInput}

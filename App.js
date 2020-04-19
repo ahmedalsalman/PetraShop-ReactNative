@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import RootNavigator from "./Navigation";
 import { NavigationContainer } from "@react-navigation/native";
 
-import store from "./Redux";
+import store from "./redux";
 
 class App extends Component {
   render() {

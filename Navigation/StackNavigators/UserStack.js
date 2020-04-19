@@ -5,8 +5,7 @@ import { connect } from "react-redux";
 import { LOGIN, SIGNUP, PROFILE } from "../screenNames";
 import Login from "../../Components/Authentication/Login";
 import Signup from "../../Components/Authentication/Signup";
-import Home from "../../Components/Home";
-// import Profile from "../../Components/Profile";
+import Profile from "../../Components/Profile";
 
 // Config
 import screenOptions from "../screenOptions";
@@ -14,10 +13,11 @@ import screenOptions from "../screenOptions";
 const { Navigator, Screen } = createStackNavigator();
 
 const UserStack = ({ user }) => {
+  // console.log(user);
   return (
-    <Navigator initialRouteName={LOGIN} screenOptions={screenOptions}>
+    <Navigator initialRouteName={Profile} screenOptions={screenOptions}>
       {user ? (
-        <Screen name="Home" component={Home} />
+        <Screen name={PROFILE} component={Profile} />
       ) : (
         <>
           <Screen
