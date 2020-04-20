@@ -1,5 +1,13 @@
 import React from "react";
-import { Text, View, List, ListItem, Card, CardItem } from "native-base";
+import {
+  Text,
+  View,
+  List,
+  ListItem,
+  Card,
+  CardItem,
+  Thumbnail,
+} from "native-base";
 import { connect } from "react-redux";
 import styles from "./styles";
 // Components
@@ -21,9 +29,18 @@ const Profile = ({ username, order }) => {
   // ));
   return (
     <View>
-      <Text>Welcome To Petra Handmade Shop</Text>
-      {/* <Text>You can show your product in this shop </Text> */}
-      {/* {orderList} */}
+      {/* <View style={styles.container}> */}
+      <ListItem>
+        <Thumbnail
+          source={{
+            uri:
+              "https://images.theconversation.com/files/319375/original/file-20200309-118956-1cqvm6j.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
+          }}
+          // style={{ height: 200, width: 370 }}
+        />
+        <Text style={styles.text2}>Welcome Sara</Text>
+        {/* </View> */}
+      </ListItem>
       <LogoutButton />
     </View>
   );
@@ -32,5 +49,6 @@ const mapStateToProps = ({ user, order }) => ({
   username: user?.username,
   order,
 });
+
 export default connect(mapStateToProps)(Profile);
 // export default Profile;

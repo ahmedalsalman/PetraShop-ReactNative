@@ -53,12 +53,11 @@ export const removeItemFromCart = (itemID) => {
     console.error(err);
   }
 };
-export const checkoutCart = () => {
+
+export const checkoutCart = async (dispatch) => {
   try {
-    console.log("ssss");
-    const res = instance.post(`cart/checkout/`);
-    console.log(res.data);
-    // fetchCart(chartID);
+    await instance.post(`cart/checkout/`);
+    dispatch({ type: CHECKOUT });
   } catch (err) {
     console.error(err);
   }

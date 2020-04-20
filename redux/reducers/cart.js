@@ -35,8 +35,11 @@ export default (state = initialState, { type, payload }) => {
 
     //   return items.filter((item) => item !== payload);
 
-    // case CHECKOUT:
-    //   return [];
+    case CHECKOUT:
+      return {
+        ...state,
+        items: [],
+      };
 
     case SET_CART:
       return {

@@ -9,10 +9,17 @@ import { checkoutCart, login, fetchCart } from "../../redux/actions";
 import { LOGIN, USER } from "../../Navigation/screenNames";
 
 class ProducCart extends Component {
-  // componentDidMount() {
-  //   this.props.fetchCart(this.props.user.id);
-  // }
+  componentDidMount() {
+    if (this.props.user) this.props.fetchCart(this.props.user.user_id);
+  }
+  componentDidUpdate(preProps) {
+    // if (this.props.cart.length !== preProps.cart.length)
+    // setInterval(() => {
+    if (this.props.user) this.props.fetchCart(this.props.user.user_id);
+    // }, 2000);
+  }
   render() {
+    // console.log(this.props.user.user_id);
     let cartItems = [];
 
     if (this.props.cart)

@@ -6,6 +6,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     opacity: 1,
+    marginLeft: 20,
+  },
+  text2: {
+    // color: "white",
+    fontSize: 18,
+    fontWeight: "bold",
+    opacity: 1,
+    marginLeft: 20,
   },
   divider: {
     borderBottomColor: "black",
@@ -46,6 +54,16 @@ const styles = StyleSheet.create({
   background: {
     width: null,
     flex: 1,
+  },
+  container: {
+    flex: 1,
+    backgroundColor: "#F5FCFF",
+    marginTop: 40,
+    marginHorizontal: 10,
+  },
+  image: {
+    width: 50,
+    height: 50,
   },
 });
 export default styles;
