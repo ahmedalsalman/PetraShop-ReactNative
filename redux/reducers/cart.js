@@ -24,19 +24,19 @@ export default (state = initialState, { type, payload }) => {
     //   return { ...state, items: newArray.concat(state.items) };
 
     case ADD_ITEM_TO_CART:
-      const item = action.payload;
+      const item = payload;
+
       return {
         ...state,
         items: [...state.items, item],
       };
 
-    case REMOVE_ITEM:
-      console.log(items);
-      console.log("sssssss");
-      return items.filter((item) => item !== payload);
+    // case REMOVE_ITEM:
 
-    case CHECKOUT:
-      return [];
+    //   return items.filter((item) => item !== payload);
+
+    // case CHECKOUT:
+    //   return [];
 
     case SET_CART:
       return {

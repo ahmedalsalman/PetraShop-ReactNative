@@ -13,4 +13,5 @@ export const PREVIOUS_ORDER = "PreviousOrder";
 export const SHOP = "Shop";
 export const PRODUCTSHOPS = "ProductList";
 export const PRODUCTSHOP = "ProductDetail";
+export const CATOGRIES = "Catogries";
 export const CART = "Cart";

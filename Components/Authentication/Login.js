@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 // Screen Names
-import { SIGNUP, SHOP, PRODUCTSHOPS } from "../../Navigation/screenNames";
+import {
+  SIGNUP,
+  SHOP,
+  PRODUCTSHOPS,
+  CATOGRIES,
+} from "../../Navigation/screenNames";
 
 import { login } from "../../redux/actions";
 // Styling Components
@@ -18,7 +23,7 @@ class Login extends Component {
   render() {
     const { navigation, login } = this.props;
     const { username, password } = this.state;
-    const goToList = () => navigation.navigate(SHOP, { screen: PRODUCTSHOPS });
+    const goToList = () => navigation.navigate(SHOP, { screen: CATOGRIES });
     return (
       <View style={styles.authContainer}>
         <Text style={styles.authTitle}>Login</Text>

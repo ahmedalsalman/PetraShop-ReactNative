@@ -52,7 +52,7 @@ class ProducDetail extends Component {
 
                   <Image
                     source={{ uri: item.image1 }}
-                    style={{ width: 330, height: 250 }}
+                    style={{ width: 330, height: 270 }}
                   />
                 </Body>
               </CardItem>
@@ -62,9 +62,7 @@ class ProducDetail extends Component {
               <Left>
                 <Text>{item.description}</Text>
               </Left>
-              {/* <Right> */}
               <Text>price: {item.price}$</Text>
-              {/* </Right> */}
             </ListItem>
             <ListItem>
               <Left>
@@ -80,13 +78,11 @@ class ProducDetail extends Component {
                   }}
                 />
               </Left>
-              <Text></Text>
               <Right>
                 <Button
                   full
                   info
                   onPress={() =>
-                    // this.handlerState(item) ||
                     this.props.addItemToCart(item.id, this.state.count)
                   }
                 >

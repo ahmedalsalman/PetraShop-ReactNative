@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     // height: "100%",
     // height: 300,
-    width: "100%",
+    // width: "100%",
   },
   listitem: {
     backgroundColor: "transparent",

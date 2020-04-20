@@ -15,8 +15,8 @@ import styles from "./styles";
 const Catogries = ({ navigation }) => {
   //   const products = props.products;
   console.log(data);
-  const productsList = data.map((item) => (
-    <ImageBackground source={{ uri: item.img_url }}>
+  const catogryList = data.map((item) => (
+    <ImageBackground source={{ uri: item.img_url }} style={styles.background}>
       <View style={styles.overlay} />
       <Card
         style={styles.transparent}
@@ -25,7 +25,7 @@ const Catogries = ({ navigation }) => {
       >
         <Text
           style={styles.text}
-          onPress={() => navigation.navigate("ProductList")}
+          onPress={() => navigation.navigate("ProductList", { catogry: item })}
         >
           {item.name}
         </Text>
@@ -37,7 +37,7 @@ const Catogries = ({ navigation }) => {
     <Container>
       <Content>
         <View>
-          <List>{productsList}</List>
+          <List>{catogryList}</List>
         </View>
       </Content>
     </Container>

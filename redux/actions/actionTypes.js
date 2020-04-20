@@ -5,3 +5,4 @@ export const REMOVE_ITEM = "REMOVE_ITEM";
 export const CHECKOUT = "CHECKOUT";
 
 export const SET_CART = "SET_CART";
+export const HISTORY_ORDER = "HISTORY_ORDER";

@@ -40,7 +40,7 @@ export const login = (userData, redirect) => async (dispatch) => {
     const { access } = response.data;
     // const { user_id } = response.data;
     // console.log("ssss  " + response.data.id);
-    console.log(decode(access).user_id);
+    // console.log(decode(access).user_id);
     dispatch(setCurrentUser(access));
     dispatch(fetchCart(decode(access).user_id));
 

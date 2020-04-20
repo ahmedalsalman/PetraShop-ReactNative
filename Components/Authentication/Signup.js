@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { signup } from "../../redux/actions";
 // Screen Names
-import { LOGIN, SHOP, PRODUCTSHOPS } from "../../Navigation/screenNames";
+import {
+  LOGIN,
+  SHOP,
+  PRODUCTSHOPS,
+  CATOGRIES,
+} from "../../Navigation/screenNames";
 
 // Styling Components
 import { TextInput, TouchableOpacity, View } from "react-native";
@@ -22,7 +27,7 @@ class Signup extends Component {
     const { navigation } = this.props;
     const { username, password, first_name, last_name, email } = this.state;
     const goToCoffeeList = () =>
-      navigation.navigate(SHOP, { screen: PRODUCTSHOPS });
+      navigation.navigate(SHOP, { screen: CATOGRIES });
     return (
       <View style={styles.authContainer}>
         <Text style={styles.authTitle}>Signup</Text>

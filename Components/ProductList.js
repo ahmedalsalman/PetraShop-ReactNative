@@ -5,19 +5,26 @@ import { connect } from "react-redux";
 
 const ProductList = (props) => {
   const products = props.products;
-  const productsList = products.map((item) => (
-    <ListItem
-      key={item.id}
-      onPress={() => props.navigation.navigate("ProductDetail", { item: item })}
-    >
-      <Image
-        source={{ uri: item.image1 }}
-        style={{ width: 150, height: 100 }}
-      />
+  const catogry = props.route.params.catogry.name;
+  // console.log(catogry === "Paintings & Art");
+  console.log(products);
+  const productsList = products
+    .filter((item) => item.category === catogry)
+    .map((item) => (
+      <ListItem
+        key={item.id}
+        onPress={() =>
+          props.navigation.navigate("ProductDetail", { item: item })
+        }
+      >
+        <Image
+          source={{ uri: item.image1 }}
+          style={{ width: 150, height: 150 }}
+        />
 
-      <Text>{item.name}</Text>
-    </ListItem>
-  ));
+        <Text>{item.name}</Text>
+      </ListItem>
+    ));
 
   return (
     <Container>

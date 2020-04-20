@@ -5,22 +5,23 @@ import {
   SET_CART,
 } from "./actionTypes";
 import instance from "./instance";
+
 // export const addItemToCart = (item) => ({
 //   type: ADD_ITEM_TO_CART,
 //   payload: item,
 // });
-export const removeItemFromCart = (item) => {
-  console.log(item);
-  return {
-    type: REMOVE_ITEM,
-    payload: item,
-  };
-};
+// export const removeItemFromCart = (item) => {
+//   console.log(item);
+//   return {
+//     type: REMOVE_ITEM,
+//     payload: item,
+//   };
+// };
 
-export const checkoutCart = (order) => ({
-  type: CHECKOUT,
-  payload: order,
-});
+// export const checkoutCart = (order) => ({
+//   type: CHECKOUT,
+//   payload: order,
+// });
 
 export const fetchCart = (ID) => async (dispatch) => {
   try {
@@ -38,24 +39,27 @@ export const addItemToCart = (itemID, count) => async (dispatch) => {
       count: count,
     });
     const product = res.data;
-    console.log(res.data);
     dispatch({ type: ADD_ITEM_TO_CART, payload: product });
     fetchCart(itemID);
   } catch (err) {
     console.error(err);
   }
 };
-
-// export const sendMessage = (cartID, addProduct) => async (dispatch) => {
-//   try {
-//     const res = await instance.post(`channels/${cartID}/send/`, addProduct);
-//     const product = res.data;
-//     dispatch({
-//       type: ADD_ITEM_TO_CART,
-//       payload: product,
-//     });
-//   } catch (err) {
-//     console.error(err);
-//     dispatch(setErrors(err));
-//   }
-// };
+export const removeItemFromCart = (itemID) => {
+  try {
+    instance.delete(`item/delete/${itemID}/`);
+    fetchCart(itemID);
+  } catch (err) {
+    console.error(err);
+  }
+};
+export const checkoutCart = () => {
+  try {
+    console.log("ssss");
+    const res = instance.post(`cart/checkout/`);
+    console.log(res.data);
+    // fetchCart(chartID);
+  } catch (err) {
+    console.error(err);
+  }
+};

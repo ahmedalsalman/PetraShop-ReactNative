@@ -1,5 +1,15 @@
 import React from "react";
-import { Text, Left, Body, Right, Button, ListItem, Icon } from "native-base";
+import {
+  Text,
+  Left,
+  Body,
+  Right,
+  Button,
+  ListItem,
+  Icon,
+  SwipeRow,
+  View,
+} from "native-base";
 import { connect } from "react-redux";
 
 import { removeItemFromCart } from "../../redux/actions";
@@ -19,15 +29,15 @@ const CartItem = ({ item }) => (
       <Text style={styles.quantity}>{item.count}</Text>
     </Body>
     <Right>
-      <Button transparent onPress={() => removeItemFromCart(item)}>
+      <Button transparent onPress={() => removeItemFromCart(item.id)}>
         <Icon name="trash" style={styles.removeItem} />
       </Button>
     </Right>
   </ListItem>
 );
-
+// onPress={() => removeItemFromCart(item.id)}
 const mapDispatchToProps = (dispatch) => ({
-  removeItemFromCart: (item) => dispatch(removeItemFromCart(item)),
+  removeItemFromCart: (itemID) => dispatch(removeItemFromCart(itemID)),
 });
 
 export default connect(null, mapDispatchToProps)(CartItem);

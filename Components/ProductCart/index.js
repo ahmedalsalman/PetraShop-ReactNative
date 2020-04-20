@@ -5,47 +5,59 @@ import { connect } from "react-redux";
 // Component
 import CartItem from "./CartItem";
 
-import { checkoutCart, login } from "../../redux/actions";
+import { checkoutCart, login, fetchCart } from "../../redux/actions";
 import { LOGIN, USER } from "../../Navigation/screenNames";
 
-const ProducCart = ({ cart, user, checkoutCart, navigation }) => {
-  // const cartProducts = cart.items;
-  console.log("cart");
-  console.log(cart);
-  console.log(cart.length > 0);
-  let cartItems = [];
+class ProducCart extends Component {
+  // componentDidMount() {
+  //   this.props.fetchCart(this.props.user.id);
+  // }
+  render() {
+    let cartItems = [];
 
-  if (cart) cartItems = cart.items.map((item) => <CartItem item={item} />);
+    if (this.props.cart)
+      cartItems = this.props.cart.items.map((item) => (
+        <CartItem item={item} itemId={item.id} />
+      ));
 
-  return (
-    <List>
-      {cartItems.length ? (
-        <>
-          {cartItems}
-          <Button
-            full
-            danger
-            onPress={
-              user
-                ? () => checkoutCart({ date: new Date(), items: cart })
-                : () => navigation.navigate(USER, { screen: LOGIN })
-            }
-          >
-            <Text>{user ? "Checkout" : "login"}</Text>
-          </Button>
-        </>
-      ) : (
-        <Text style={{ textAlign: "center" }}>Buy something</Text>
-      )}
-    </List>
-  );
-};
+    return (
+      <List>
+        {cartItems.length ? (
+          <>
+            {cartItems}
+            <Button
+              full
+              danger
+              onPress={
+                this.props.user
+                  ? () => {
+                      this.props.checkoutCart();
+                    }
+                  : () =>
+                      this.props.navigation.navigate(USER, { screen: LOGIN })
+              }
+            >
+              <Text>{this.props.user ? "Checkout" : "login"}</Text>
+            </Button>
+          </>
+        ) : (
+          <Text style={{ textAlign: "center" }}>Buy something</Text>
+        )}
+      </List>
+    );
+  }
+}
 
 const mapStateToProps = ({ cart, user }) => ({
   cart,
   user,
 });
 
-const mapDispatchToProps = { checkoutCart };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    checkoutCart: () => dispatch(checkoutCart()),
+    fetchCart: (cartID) => dispatch(fetchCart(cartID)),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProducCart);
