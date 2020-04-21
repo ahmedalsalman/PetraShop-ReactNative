@@ -90,6 +90,14 @@ const styles = StyleSheet.create({
     marginTop: 40,
     marginHorizontal: 10,
   },
+  button2: {
+    flex: 1,
+    backgroundColor: "#691444",
+    // marginTop: 40,
+    marginHorizontal: -15,
+    marginRight: 30,
+    width: 100,
+  },
 });
 
 export default styles;

@@ -27,13 +27,14 @@ import LogoutButton from "./LogoutButton";
 //   </ListItem>
 // );
 const content = (
-  <View>
+  // <View>
+  <>
     <Text>Product Name :</Text>
     <Text>Product Price :</Text>
     <Text>Product Description :</Text>
     <Text>Product type of catogry :</Text>
     <Text>Product image :</Text>
-  </View>
+  </>
 );
 const dataArray = [
   { title: "Add Product", content: content },
@@ -55,13 +56,13 @@ const Profile = ({ username, order }) => {
         />
         <Text style={styles.text2}>Welcome Sara</Text>
       </ListItem>
-      <Content padder>
+      <ListItem>
         <Accordion
           dataArray={dataArray}
           headerStyle={{ backgroundColor: "#550e37" }}
-          contentStyle={{ backgroundColor: "#ba80a1" }}
+          contentStyle={{ backgroundColor: "white" }}
         />
-      </Content>
+      </ListItem>
       <LogoutButton />
     </View>
   );

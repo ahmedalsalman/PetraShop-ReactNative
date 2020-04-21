@@ -56,8 +56,8 @@ class ProducDetail extends Component {
                   max={10}
                   min={1}
                   step={1}
-                  colorMax={"#094763"}
-                  colorMin={"#5e8394"}
+                  colorMax={"#580c38"}
+                  colorMin={"#d199b9"}
                   value={this.state.count}
                   onChange={(count) => {
                     this.setState({ count });
@@ -67,7 +67,7 @@ class ProducDetail extends Component {
               <Right>
                 <Button
                   full
-                  style={styles.button}
+                  style={styles.button2}
                   onPress={() =>
                     this.props.addItemToCart(item.id, this.state.count)
                   }
