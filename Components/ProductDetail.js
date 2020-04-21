@@ -12,6 +12,7 @@ import {
   ListItem,
 } from "native-base";
 import InputSpinner from "react-native-input-spinner";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 // Styles
 import styles from "./styles";
@@ -20,22 +21,7 @@ import { connect } from "react-redux";
 import { addItemToCart } from "../redux/actions";
 
 class ProducDetail extends Component {
-  state = { count: 0 };
-  // state = {
-  //   product: {
-  //     id: 1,
-  //     category: "Art",
-  //     owner: "sara",
-  //     name: "Cat painting",
-  //     description: "Made with love",
-  //     price: "100.00",
-  //     quantity: 10,
-  //     image1: "https://petra-drf.herokuapp.com/media/cat.jpg",
-  //     image2: null,
-  //     image3: null,
-  //   },
-  //   count: 0,
-  // }; ///{product:{}, count:0}
+  state = { count: 1 };
   handlerState(product) {
     this.setState({ product }); //item , count
   }
@@ -48,7 +34,7 @@ class ProducDetail extends Component {
             <Card>
               <CardItem>
                 <Body>
-                  <Text>{item.name}</Text>
+                  <Text style={styles.text}>{item.name}</Text>
 
                   <Image
                     source={{ uri: item.image1 }}
@@ -81,12 +67,13 @@ class ProducDetail extends Component {
               <Right>
                 <Button
                   full
-                  info
+                  style={styles.button}
                   onPress={() =>
                     this.props.addItemToCart(item.id, this.state.count)
                   }
                 >
-                  <Text>Buy Now</Text>
+                  <Icon name="shopping-bag" size={30} />
+                  <Text style={styles.text3}>Buy Now</Text>
                 </Button>
               </Right>
             </ListItem>

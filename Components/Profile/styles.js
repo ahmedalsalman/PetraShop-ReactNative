@@ -61,6 +61,12 @@ const styles = StyleSheet.create({
     marginTop: 40,
     marginHorizontal: 10,
   },
+  button: {
+    // flex: 1,
+    backgroundColor: "#691444",
+    marginTop: 40,
+    marginHorizontal: 10,
+  },
   image: {
     width: 50,
     height: 50,

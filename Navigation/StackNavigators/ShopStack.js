@@ -17,8 +17,16 @@ function ShopStack() {
       <Screen name="Home" component={Home} />
       <Screen name="Catogries" component={Catogries} />
 
-      <Screen name="ProductList" component={ProductList} />
-      <Screen name="ProductDetail" component={ProductDetail} />
+      <Screen
+        name="ProductList"
+        component={ProductList}
+        options={({ route }) => ({ title: route.params.catogry.name })}
+      />
+      <Screen
+        name="ProductDetail"
+        component={ProductDetail}
+        options={({ route }) => ({ title: route.params.item.name })}
+      />
     </Navigator>
   );
 }

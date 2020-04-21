@@ -6,26 +6,9 @@ import {
 } from "./actionTypes";
 import instance from "./instance";
 
-// export const addItemToCart = (item) => ({
-//   type: ADD_ITEM_TO_CART,
-//   payload: item,
-// });
-// export const removeItemFromCart = (item) => {
-//   console.log(item);
-//   return {
-//     type: REMOVE_ITEM,
-//     payload: item,
-//   };
-// };
-
-// export const checkoutCart = (order) => ({
-//   type: CHECKOUT,
-//   payload: order,
-// });
-
-export const fetchCart = (ID) => async (dispatch) => {
+export const fetchCart = () => async (dispatch) => {
   try {
-    const res = await instance.get(`cart/${ID}/`);
+    const res = await instance.get(`cart/`);
     const cart = res.data;
     dispatch({ type: SET_CART, payload: cart.items });
   } catch (err) {
@@ -40,7 +23,6 @@ export const addItemToCart = (itemID, count) => async (dispatch) => {
     });
     const product = res.data;
     dispatch({ type: ADD_ITEM_TO_CART, payload: product });
-    fetchCart(itemID);
   } catch (err) {
     console.error(err);
   }
@@ -48,13 +30,12 @@ export const addItemToCart = (itemID, count) => async (dispatch) => {
 export const removeItemFromCart = (itemID) => {
   try {
     instance.delete(`item/delete/${itemID}/`);
-    fetchCart(itemID);
   } catch (err) {
     console.error(err);
   }
 };
 
-export const checkoutCart = async (dispatch) => {
+export const checkoutCart = () => async (dispatch) => {
   try {
     await instance.post(`cart/checkout/`);
     dispatch({ type: CHECKOUT });

@@ -35,7 +35,7 @@ const CartItem = ({ item }) => (
     </Right>
   </ListItem>
 );
-// onPress={() => removeItemFromCart(item.id)}
+
 const mapDispatchToProps = (dispatch) => ({
   removeItemFromCart: (itemID) => dispatch(removeItemFromCart(itemID)),
 });

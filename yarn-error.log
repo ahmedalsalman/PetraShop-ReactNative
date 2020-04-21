@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-card-list
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-vector-icons
 
 PATH: 
   C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Users\banan\AppData\Local\Microsoft\WindowsApps;C:\Users\banan\AppData\Roaming\npm;C:\Users\banan\AppData\Local\Yarn\bin
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\banan\Desktop\Multi_PlatForm_Project\RN_petra\petrashop\node_modules\@babel\preset-env\node_modules\.bin'
+  Error: EPERM: operation not permitted, unlink 'C:\Users\banan\Desktop\Multi_PlatForm_Project\RN_petra\petrashop\node_modules\@babel\compat-data\node_modules\.bin'
 
 npm manifest: 
   {
@@ -40,6 +40,7 @@ npm manifest:
       "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
       "react-native-gesture-handler": "~1.6.0",
       "react-native-input-spinner": "^1.2.10",
+      "react-native-modal-wrapper": "^3.1.1",
       "react-native-reanimated": "~1.7.0",
       "react-native-safe-area-context": "0.7.3",
       "react-native-screens": "~2.2.0",
@@ -4580,6 +4581,18 @@ Lockfile:
     dependencies:
       prop-types "^15.6.2"
       react-native-iphone-x-helper "^1.0.3"
+  
+  react-native-keyboard-spacer@^0.4.1:
+    version "0.4.1"
+    resolved "https://registry.yarnpkg.com/react-native-keyboard-spacer/-/react-native-keyboard-spacer-0.4.1.tgz#46f18a320432098a25ea9fa89f5143dd254d332d"
+    integrity sha1-RvGKMgQyCYol6p+on1FD3SVNMy0=
+  
+  react-native-modal-wrapper@^3.1.1:
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/react-native-modal-wrapper/-/react-native-modal-wrapper-3.1.1.tgz#27dddd4fae8911df6fd63bca006cda9b1925be2d"
+    integrity sha512-rG+qz1+a3pZI3rNH8MvlbDR7n4cqO+bdiggKaC658jRXLf2hR+0FGUmArCCejtcXhiJN8+ozazbL6MlQPPr2Ww==
+    dependencies:
+      react-native-keyboard-spacer "^0.4.1"
   
   react-native-reanimated@~1.7.0:
     version "1.7.1"

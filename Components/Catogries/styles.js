@@ -19,9 +19,6 @@ const styles = StyleSheet.create({
 
     opacity: 0.5,
     backgroundColor: "black",
-    // height: "100%",
-    // height: 300,
-    // width: "100%",
   },
   listitem: {
     backgroundColor: "transparent",

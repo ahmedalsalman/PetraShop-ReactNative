@@ -1,13 +1,27 @@
 import React from "react";
-import { Container, Content, List, View, Text, ListItem } from "native-base";
+import {
+  Container,
+  Content,
+  List,
+  View,
+  Text,
+  ListItem,
+  Right,
+  Button,
+  // Icon,
+  Left,
+  Body,
+} from "native-base";
 import { Image } from "react-native";
 import { connect } from "react-redux";
+import styles from "./styles";
+import { addItemToCart } from "../redux/actions";
 
+import Icon from "react-native-vector-icons/FontAwesome";
 const ProductList = (props) => {
   const products = props.products;
   const catogry = props.route.params.catogry.name;
-  // console.log(catogry === "Paintings & Art");
-  console.log(products);
+
   const productsList = products
     .filter((item) => item.category === catogry)
     .map((item) => (
@@ -17,12 +31,28 @@ const ProductList = (props) => {
           props.navigation.navigate("ProductDetail", { item: item })
         }
       >
-        <Image
-          source={{ uri: item.image1 }}
-          style={{ width: 150, height: 150 }}
-        />
+        <Left>
+          <Image
+            source={{ uri: item.image1 }}
+            style={{ width: 120, height: 150 }}
+          />
 
-        <Text>{item.name}</Text>
+          {/* <Body> */}
+          <Text style={styles.text}>
+            {item.name}
+            <Text style={styles.text2}>{item.price}$</Text>
+          </Text>
+        </Left>
+        <Right>
+          <Button transparent>
+            <Icon
+              name="shopping-bag"
+              style={styles.bag}
+              size={20}
+              onPress={() => props.addItemToCart(item.id, 1)}
+            />
+          </Button>
+        </Right>
       </ListItem>
     ));
 
@@ -41,4 +71,7 @@ const mapStateToProps = (state) => {
     products: state.productsState.products,
   };
 };
-export default connect(mapStateToProps)(ProductList);
+const mapDispatchToProps = (dispatch) => ({
+  addItemToCart: (itemID, count) => dispatch(addItemToCart(itemID, count)),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

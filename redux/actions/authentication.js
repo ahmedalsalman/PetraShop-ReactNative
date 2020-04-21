@@ -17,7 +17,7 @@ const setCurrentUser = (token) => {
 export const checkForToken = () => async (dispatch) => {
   const currentTimeInSeconds = Date.now() / 1000;
   const token = await AsyncStorage.getItem("token");
-  dispatch(fetchCart(decode(token).user_id));
+  dispatch(fetchCart());
 
   if (token && decode(token).exp >= currentTimeInSeconds)
     dispatch(setCurrentUser(token));
@@ -38,11 +38,8 @@ export const login = (userData, redirect) => async (dispatch) => {
   try {
     const response = await instance.post("login/", userData);
     const { access } = response.data;
-    // const { user_id } = response.data;
-    // console.log("ssss  " + response.data.id);
-    // console.log(decode(access).user_id);
     dispatch(setCurrentUser(access));
-    dispatch(fetchCart(decode(access).user_id));
+    dispatch(fetchCart());
 
     redirect();
   } catch (error) {
@@ -53,7 +50,6 @@ export const login = (userData, redirect) => async (dispatch) => {
 export const signup = (userData, redirect) => async (dispatch) => {
   try {
     const res = await instance.post("signup/", userData);
-    console.log(res.data);
     dispatch(login(userData, redirect));
   } catch (error) {
     console.error("Error while signing up!", error);

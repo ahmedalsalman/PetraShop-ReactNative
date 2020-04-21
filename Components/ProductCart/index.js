@@ -7,16 +7,15 @@ import CartItem from "./CartItem";
 
 import { checkoutCart, login, fetchCart } from "../../redux/actions";
 import { LOGIN, USER } from "../../Navigation/screenNames";
+import Icon from "react-native-vector-icons/AntDesign";
+import styles from "./styles";
 
 class ProducCart extends Component {
   componentDidMount() {
-    if (this.props.user) this.props.fetchCart(this.props.user.user_id);
+    if (this.props.user) this.props.fetchCart();
   }
   componentDidUpdate(preProps) {
-    // if (this.props.cart.length !== preProps.cart.length)
-    // setInterval(() => {
-    if (this.props.user) this.props.fetchCart(this.props.user.user_id);
-    // }, 2000);
+    if (this.props.user) this.props.fetchCart();
   }
   render() {
     // console.log(this.props.user.user_id);
@@ -34,7 +33,7 @@ class ProducCart extends Component {
             {cartItems}
             <Button
               full
-              danger
+              style={styles.button}
               onPress={
                 this.props.user
                   ? () => {
@@ -44,7 +43,16 @@ class ProducCart extends Component {
                       this.props.navigation.navigate(USER, { screen: LOGIN })
               }
             >
-              <Text>{this.props.user ? "Checkout" : "login"}</Text>
+              <Text>
+                {this.props.user ? (
+                  <Text>
+                    Checkout
+                    <Icon name="shoppingcart" size={30} />
+                  </Text>
+                ) : (
+                  "login"
+                )}
+              </Text>
             </Button>
           </>
         ) : (
@@ -63,7 +71,7 @@ const mapStateToProps = ({ cart, user }) => ({
 const mapDispatchToProps = (dispatch) => {
   return {
     checkoutCart: () => dispatch(checkoutCart()),
-    fetchCart: (cartID) => dispatch(fetchCart(cartID)),
+    fetchCart: () => dispatch(fetchCart()),
   };
 };
 

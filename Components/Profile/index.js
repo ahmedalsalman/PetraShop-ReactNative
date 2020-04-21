@@ -7,6 +7,10 @@ import {
   Card,
   CardItem,
   Thumbnail,
+  Button,
+  Content,
+  Accordion,
+  TextInput,
 } from "native-base";
 import { connect } from "react-redux";
 import styles from "./styles";
@@ -22,25 +26,42 @@ import LogoutButton from "./LogoutButton";
 //     </Card>
 //   </ListItem>
 // );
-
+const content = (
+  <View>
+    <Text>Product Name :</Text>
+    <Text>Product Price :</Text>
+    <Text>Product Description :</Text>
+    <Text>Product type of catogry :</Text>
+    <Text>Product image :</Text>
+  </View>
+);
+const dataArray = [
+  { title: "Add Product", content: content },
+  { title: "My Orders", content: "My orders" },
+  { title: "My Product", content: "My Product" },
+];
 const Profile = ({ username, order }) => {
   // const orderList = order.map((order) => (
   //   <OrderItem order={order} key={order.date.toString()} />
   // ));
   return (
     <View>
-      {/* <View style={styles.container}> */}
       <ListItem>
         <Thumbnail
           source={{
             uri:
               "https://images.theconversation.com/files/319375/original/file-20200309-118956-1cqvm6j.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
           }}
-          // style={{ height: 200, width: 370 }}
         />
         <Text style={styles.text2}>Welcome Sara</Text>
-        {/* </View> */}
       </ListItem>
+      <Content padder>
+        <Accordion
+          dataArray={dataArray}
+          headerStyle={{ backgroundColor: "#550e37" }}
+          contentStyle={{ backgroundColor: "#ba80a1" }}
+        />
+      </Content>
       <LogoutButton />
     </View>
   );
@@ -51,4 +72,3 @@ const mapStateToProps = ({ user, order }) => ({
 });
 
 export default connect(mapStateToProps)(Profile);
-// export default Profile;

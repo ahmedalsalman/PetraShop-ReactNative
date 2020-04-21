@@ -18,11 +18,7 @@ const Catogries = ({ navigation }) => {
   const catogryList = data.map((item) => (
     <ImageBackground source={{ uri: item.img_url }} style={styles.background}>
       <View style={styles.overlay} />
-      <Card
-        style={styles.transparent}
-        key={item.id}
-        // onPress={() => navigation.navigate("ProductList")}
-      >
+      <Card style={styles.transparent} key={item.id}>
         <Text
           style={styles.text}
           onPress={() => navigation.navigate("ProductList", { catogry: item })}

@@ -18,6 +18,12 @@ const styles = StyleSheet.create({
     color: "#42566E",
     fontSize: 21,
   },
+  button: {
+    // flex: 1,
+    backgroundColor: "#691444",
+    marginTop: 40,
+    marginHorizontal: 10,
+  },
 });
 
 export default styles;

@@ -61,6 +61,34 @@ const styles = StyleSheet.create({
     color: "white",
     fontStyle: "italic",
     fontFamily: "Baskerville",
+    // marginLeft: 30,
+  },
+  text: {
+    fontSize: 25,
+    fontWeight: "bold",
+    backgroundColor: "transparent",
+    color: "#691444",
+    fontStyle: "italic",
+    fontFamily: "Baskerville",
+    // marginLeft: 30,
+    marginRight: 20,
+  },
+  text2: {
+    marginLeft: 20,
+  },
+  text3: {
+    marginLeft: 10,
+  },
+  bag: {
+    color: "#691444",
+    // fontSize: 50,
+    // height: 50,
+  },
+  button: {
+    // flex: 1,
+    backgroundColor: "#691444",
+    marginTop: 40,
+    marginHorizontal: 10,
   },
 });
 
